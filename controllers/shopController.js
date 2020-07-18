@@ -15,9 +15,6 @@ router.get("/", function(req, res) {
     });
   });
 
-  
-//   TODO: CHECK ROUTER.GET, then move onto others
-
 
 // router.post("/api/cats", function(req, res) {
 //     cat.create([

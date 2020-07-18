@@ -1,38 +1,40 @@
-<h1>Welcome to Ev's Burgers</h1>
+<h1>Welcome to Ev's EatDaBurgers</h1>
 
-<h2>Burger Specials</h2>
-
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Cats that are sleepy!</h2>
+<h2>Burgers of Yore</h2>
 
 <ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
+  {{#each burgers}}
+    {{#if is_eaten}}
+      {{> burgers/single-burger is_eaten=true}}
     {{/if}}
   {{/each}}
 </ul>
 
-<h2>Add a Cat</h2>
+
+
+<h2>Classic Menu</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless is_eaten}}
+      {{> burgers/single-burger is_eaten=false}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="ca">Cat Name:</label>
+    <label for="ca">Burger To Add:</label>
     <input type="text" id="ca" name="name">
   </div>
 
-  <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
+  {{!-- <div class="form-group">
+    <label for="slee">Is it a Special?</label><br>
+    <input type="radio" name="burger_special" value="1" checked> Make it a Special!<br>
+    <input type="radio" name="burger_special" value="0"> Classic menu
+  </div> --}}
 
-  <button type="submit">Add Cat</button>
+  <button type="submit">Add Da Burger!</button>
 </form>
