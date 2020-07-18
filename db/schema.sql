@@ -1,4 +1,4 @@
-DROP DATABASE burger_db IF EXISTS;
+DROP DATABASE IF EXISTS burger_db;
 
 CREATE DATABASE burger_db;
 USE burger_db;

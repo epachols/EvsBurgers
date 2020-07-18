@@ -17,13 +17,13 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them.
+// Import them burger routes and give the server access to them.
 var routes = require("./controllers/shopController.js");
-
 app.use(routes);
 
-// Start our server so that it can begin listening to client requests.
+
+// "I'm listening"
 app.listen(PORT, function() {
   // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + PORT);
+  console.log("This is Dr. Frasier Crow. I'm listening on: http://localhost:" + PORT);
 });
