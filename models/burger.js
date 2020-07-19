@@ -6,12 +6,14 @@ var burger = {
       cb(res);
     });
   },
+  
   // remember the second two passed (cols,vals) are arrays
   create: function(cols, vals, cb) {
     orm.create("burgers", cols, vals, function(res) {
       cb(res);
     });
   },
+
   update: function(objColData, condition, cb) {
     orm.update("burgers", objColData, condition, function(res) {
       cb(res);

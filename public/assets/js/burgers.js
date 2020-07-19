@@ -1,59 +1,61 @@
-
+// Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-
+     
     $(".create-form").on("submit", function(event) {
-        // Make sure to preventDefault on a submit event.
-        event.preventDefault();
-    
-        var newBurger = {
-          name: $("#burg").val().trim(),
-        //   sleepy: $("[name=sleepy]:checked").val().trim()
+    //   // Make sure to preventDefault on a submit event.
+      event.preventDefault();
+      console.log("hey there turdledovew")
+  
+      var newBurger = {
+        name: $("#ca").val().trim(),
+      };
+      console.log("newBurger", newBurger)
+      // Send the POST request.
+      $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger
+      }).then(
+        function() {
+          console.log("we received confirmation of new burger, signing off from burgers.js");
+          location.reload();
+        }
+      );
+    });
+  
+    $(".delete-burger").on("click", function(event) {
+      var id = $(this).data("id");
+        console.log(id)
+    //   Send the DELETE request.
+      $.ajax("/api/burgers/" + id, {
+        type: "DELETE"
+      }).then(
+        function() {
+          console.log("deleted burger", id);
+          location.reload();
+        }
+      );
+    });
 
-        };        // Send the POST request.
-        $.ajax("/api/burgers", {
-          type: "POST",
-          data: newBurger
+    $(".change-edible").on("click", function(event) {
+        var id = $(this).data("id");
+        console.log(id)
+        var freshEdible = $(this).data("freshedible");
+          console.log(freshEdible)
+        var newEdibleState = {
+          edible: freshEdible
+        };
+        console.log(newEdibleState)
+        // SENDING the update/put request
+        $.ajax("/api/burgers/" + id, {
+          type: "PUT",
+          data: newEdibleState
         }).then(
           function() {
-            console.log("Added that burger to the menu");
-            // Reload the page to get the updated list
+            console.log("changed edible status to to", freshEdible);
             location.reload();
           }
         );
       });
-    
-    //TODO: edit to work.
-    // $(".devourIt").on("click", function(event) {
-    //     var id = $(this).data("id");
-    //     var isEaten = $(this).data("isEaten");
-    
-    //     var isEatenState = {
-    //       is_eaten: isEaten
-    //     };
-    
-    //     // Send the PUT request.
-    //     $.ajax("/api/burgers/" + id, {
-    //       type: "PUT",
-    //       data: isEatenState
-    //     }).then(
-    //       function() {
-    //         console.log("changed is_eaten to", isEaten);
-    //         // Reload the page to get the updated list
-    //         location.reload();
-    //       }
-    //     );
-    // });
 
-    $(".deleteBtn").on("click", function(event) {
-        idToDelete = $(this).attr("data-id")
-        $.ajax({
-           url: "/api/burgers/" + idToDelete,
-          type: "DELETE",
-        }
-        )
-        location.reload();
-      })
-      
-// so ends the primary function 
-});
-
+  });
+  

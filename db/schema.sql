@@ -7,7 +7,7 @@ CREATE TABLE burgers
 (
 	id int NOT NULL AUTO_INCREMENT,
 	name varchar(255) NOT NULL,
-    is_eaten BOOLEAN default false,
+    edible BOOLEAN DEFAULT false NOT NULL,
 	PRIMARY KEY (id)
 );
 
@@ -15,3 +15,6 @@ INSERT INTO burgers (name)
 VALUES ("Every Breath You Tiki Masala"),
  ("Bet it all on black garlic"),
   ("I'm Sprouta here (comes with sprouts"), ("Runny out of Thyme");
+
+INSERT INTO burgers (name, edible)
+VALUES ("this burger should be on the burgers to come back to list'", true);
