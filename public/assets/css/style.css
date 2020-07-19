@@ -1,0 +1,115 @@
+html {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(122, 156, 58);
+    font-family: 'Pangolin', cursive;
+}
+body {
+    border: 0 0;
+    margin: 0;
+}
+form {
+    font-size: 20px;
+    font-family: 'Pangolin', cursive;
+    width: 50vw;
+    margin-top: 15px;
+    margin-left:35vw;
+    display:inline-block;
+    z-index:99;
+}
+.tophalf {
+    /* display: flex; */
+    background-color: #f2e6bc;
+    height:50vh;
+    width:100vw;
+    /* align-items: center; */
+    
+}
+.wall {
+    display:flex;
+    align-items: center;
+    width:100vw;
+}
+.kitchen {
+    width: 379px;
+    height: 298px;
+    margin-right:30px;
+    margin-left:30px;
+    background-image: url("../images/kitchen.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu {
+    display:flex;
+    font-family: 'Pangolin', cursive;
+    color: whitesmoke;
+    display: block;
+    background-color:black;
+    margin: 2px 5px;
+    padding: 0 8px;
+    height: 35vh;
+    width: 30vw;
+    border: solid rgb(136, 28, 28) 25px;
+    border-radius: 5px;
+    align-content: center;
+    justify-content: space-between;
+    overflow-y: auto;
+
+    
+}
+/* upper half end  */
+
+
+
+/* lower half  */
+.countertop {
+    height:8vh;
+    background-color: #ffe079;
+    border-color: rgb(114, 95, 9);
+    border-width: 3px 0px 15px 0px;
+    border-style: solid;
+}
+
+.counter {
+    height: 30vh;
+    background: repeating-linear-gradient(90deg, 
+          #997025, #3d380c 8px, 
+          #8d6423 15px, #b8871d 70px);
+}
+
+.shadow {
+    height: 5vh;
+    background-color: rgb(63, 63, 63);
+    opacity: .40;
+}
+#kickboard {
+    height: 7vh;
+    position: relative;
+    background-color: #a0761b;
+    border-color: #3d380c;
+    border-style:solid;
+    border-width: 2px 0 2px 0;
+    margin-bottom: 0;
+    z-index: 3;
+}
+
+/* generated content */
+/* .create-form {
+    display: inline-block;
+} */
+h1 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    padding-left: 5vw;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.current, .prev {
+    width: 95%;
+}
+.blockform {
+    display: inline-block;
+}

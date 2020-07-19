@@ -1,38 +1,63 @@
-<h1>Ev's Burgers!</h1>
 
-<h2>burgers Up for Eatin!!(current menu)</h2>
+<div class="tophalf">
+    <h1>Ev's Burgers</h1>
+  <div class="wall">
+    <div class="kitchen"></div>
 
-<ul>
-  {{#each burgers}}
-    {{#unless edible}}
-      {{> burgers/single-burger edible=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
 
-<h2>Burgers to come back to(apparently not the instant-add section)</h2>
+      <div class="menu">
+        <div class="current">
 
-<ul>
-  {{#each burgers}}
-    {{#if edible}}
-      {{> burgers/single-burger edible=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+          <h2>Current Menu</h2>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+          <ul>
+            {{#each burgers}}
+            {{#unless edible}}
+            {{> burgers/single-burger edible=true}}
+            {{/unless}}
+            {{/each}}
+          </ul>
 
-  <div class="form-group">
-    <label for="ca">Burger of the Day:</label>
-    <input type="text" id="ca" name="name">
+        </div>
+      </div>
+      <div class="menu">
+          <div class="prev">
+
+          <h2>Throwbacks</h2>
+
+          <ul>
+            {{#each burgers}}
+            {{#if edible}}
+            {{> burgers/single-burger edible=false}}
+            {{/if}}
+            {{/each}}
+          </ul>
+
+        </div>
+      </div>
+
+
   </div>
-{{!-- 
-  <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div> --}}
+</div>
 
-  <button type="submit">Add Da Burger</button>
-</form>
+<div class="bottomhalf">
+  <div class="countertop">
+    <form class="create-form">
+    
+      <div class="form-group blockform">
+        <label for="ca" style="font-size: 30px;">Burger of the Day:</label>
+        <input type="text" id="ca" name="name">
+      </div>
+    
+      <button class ="blockform" type="submit">Add Da Burger</button>
+    </form>
+  </div>
+  <div class="counter">
+    <div class="shadow"></div>
+  </div>
+  <div id="kickboard"></div>
+</div>
+
+
+
+
