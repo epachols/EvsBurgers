@@ -1,4 +1,3 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
      
     $(".create-form").on("submit", function(event) {
